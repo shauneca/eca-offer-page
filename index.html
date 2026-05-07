@@ -1,0 +1,1196 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Elite Coaching Academy &middot; Coach to £10k–£20k Months</title>
+<meta name="description" content="The system that takes coaches from inconsistent £2-3k months to predictable £10-20k months. Without burning out. Without ego. Without selling your soul." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400;1,9..144,500;1,9..144,600&family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          'navy-deep':     '#030814',
+          'navy-base':     '#061a2e',
+          'navy-elevated': '#0a2440',
+          'blue-bright':   '#2c8eff',
+          'blue-soft':     '#5fa8ff',
+          gold:            '#D4AF37',
+          'gold-soft':     '#E8CB6E',
+          cream:           '#F5F1E8'
+        },
+        fontFamily: {
+          sans:    ['"Inter Tight"','system-ui','sans-serif'],
+          display: ['"Fraunces"','Georgia','serif'],
+          mono:    ['"JetBrains Mono"','ui-monospace','monospace']
+        }
+      }
+    }
+  }
+</script>
+
+<style>
+  :root {
+    --navy-deep:     #030814;
+    --navy-base:     #061a2e;
+    --navy-elevated: #0a2440;
+    --blue-bright:   #2c8eff;
+    --blue-soft:     #5fa8ff;
+    --gold:          #D4AF37;
+    --gold-soft:     #E8CB6E;
+    --cream:         #F5F1E8;
+    --text-primary:  #F5F1E8;
+    --text-muted:    rgba(245,241,232,0.65);
+    --text-subtle:   rgba(245,241,232,0.40);
+    --border-subtle: rgba(245,241,232,0.08);
+    --border-gold:   rgba(212,175,55,0.30);
+    --border-blue:   rgba(44,142,255,0.35);
+  }
+
+  * { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+  html { scroll-behavior: smooth; background: var(--navy-deep); }
+  html, body { overflow-x: hidden; }
+  body {
+    background: var(--navy-deep);
+    color: var(--text-primary);
+    font-family: 'Inter Tight', system-ui, sans-serif;
+    font-weight: 400;
+    line-height: 1.55;
+    position: relative;
+  }
+
+  /* ===== Background grain texture ===== */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.045;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.9 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  }
+  /* Atmospheric glow patches */
+  body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    background:
+      radial-gradient(900px 600px at 80% -10%, rgba(44,142,255,0.10), transparent 60%),
+      radial-gradient(700px 500px at 5% 30%, rgba(212,175,55,0.05), transparent 60%),
+      radial-gradient(800px 600px at 100% 70%, rgba(44,142,255,0.06), transparent 60%);
+  }
+  main, header, footer { position: relative; z-index: 2; }
+
+  /* ===== Type primitives ===== */
+  .font-display { font-family: 'Fraunces', Georgia, serif; }
+  .font-mono    { font-family: 'JetBrains Mono', ui-monospace, monospace; font-feature-settings: 'tnum' 1, 'zero' 1; }
+
+  .eyebrow {
+    color: var(--gold);
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    font-size: 11px;
+    font-weight: 500;
+  }
+
+  .h-section {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 400;
+    font-size: clamp(32px, 4vw, 48px);
+    line-height: 1.04;
+    letter-spacing: -0.02em;
+    color: var(--text-primary);
+  }
+  .h-section em { font-style: italic; color: var(--cream); }
+  .h-sub {
+    font-size: clamp(16px, 1.35vw, 19px);
+    color: var(--text-muted);
+    line-height: 1.6;
+    font-weight: 400;
+    max-width: 60ch;
+  }
+  .hero-sub {
+    font-size: clamp(15px, 1.15vw, 17px);
+    color: var(--text-muted);
+    line-height: 1.55;
+    font-weight: 400;
+    max-width: 56ch;
+  }
+
+  /* ===== Hero typography ===== */
+  .h-hero {
+    font-family: 'Inter Tight', system-ui, sans-serif;
+    font-weight: 600;
+    font-size: clamp(40px, 5.5vw, 72px);
+    line-height: 0.98;
+    letter-spacing: -0.035em;
+    color: var(--cream);
+  }
+  .h-hero .accent {
+    font-family: 'Inter Tight', system-ui, sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    color: var(--gold);
+    letter-spacing: -0.02em;
+    font-size: 1em;
+  }
+
+  /* ===== Premium card ===== */
+  .card {
+    position: relative;
+    background:
+      linear-gradient(180deg, rgba(255,255,255,0.025) 0%, rgba(255,255,255,0) 60%),
+      var(--navy-elevated);
+    border: 1px solid var(--border-subtle);
+    border-radius: 14px;
+    overflow: hidden;
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 1px; right: 1px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, rgba(245,241,232,0.18) 50%, transparent 100%);
+    pointer-events: none;
+  }
+  .card-hover { transition: transform .35s cubic-bezier(.2,.7,.2,1), border-color .35s ease, box-shadow .35s ease; }
+  .card-hover:hover {
+    transform: translateY(-3px);
+    border-color: var(--border-gold);
+    box-shadow:
+      0 18px 50px -20px rgba(0,0,0,0.7),
+      0 0 0 1px rgba(212,175,55,0.18),
+      0 0 60px -20px rgba(212,175,55,0.18);
+  }
+  .card-blue:hover {
+    border-color: var(--border-blue);
+    box-shadow:
+      0 18px 50px -20px rgba(0,0,0,0.7),
+      0 0 0 1px rgba(44,142,255,0.22),
+      0 0 60px -20px rgba(44,142,255,0.22);
+  }
+
+  /* ===== Buttons ===== */
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center;
+    padding: 13px 22px;
+    border-radius: 999px;
+    font-family: 'Inter Tight', system-ui, sans-serif;
+    font-weight: 500;
+    font-size: 13.5px;
+    letter-spacing: 0.02em;
+    min-height: 44px;
+    transition: transform .25s cubic-bezier(.2,.7,.2,1), background-color .25s ease, box-shadow .25s ease, color .25s ease, border-color .25s ease;
+    will-change: transform;
+  }
+  .btn:hover { transform: scale(1.02); }
+  .btn-gold {
+    background: linear-gradient(180deg, var(--gold-soft), var(--gold));
+    color: #1a1408;
+    border: 1px solid var(--gold);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.35), 0 6px 20px -8px rgba(212,175,55,0.5);
+  }
+  .btn-gold:hover {
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.45), 0 10px 30px -8px rgba(212,175,55,0.65);
+  }
+  .btn-outline {
+    background: transparent;
+    color: var(--cream);
+    border: 1px solid rgba(44,142,255,0.40);
+  }
+  .btn-outline:hover {
+    border-color: var(--blue-bright);
+    background: rgba(44,142,255,0.08);
+    box-shadow: 0 0 30px -10px rgba(44,142,255,0.4);
+  }
+
+  /* ===== Eyebrow rule (gold gradient hairline) ===== */
+  .eyebrow-rule {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold) 30%, var(--gold) 70%, transparent);
+    width: 220px;
+  }
+  .eyebrow-rule.center {
+    margin-left: auto; margin-right: auto;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  }
+
+  /* ===== Section divider hairline ===== */
+  .hairline {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--border-gold) 25%, var(--border-gold) 75%, transparent);
+  }
+
+  /* ===== Scroll progress bar ===== */
+  .scroll-progress {
+    position: fixed;
+    top: 0; left: 0;
+    height: 2px;
+    width: 0%;
+    background: linear-gradient(90deg, var(--gold), var(--gold-soft));
+    z-index: 100;
+    box-shadow: 0 0 12px rgba(212,175,55,0.6);
+  }
+
+  /* ===== Nav ===== */
+  .nav {
+    position: fixed; top: 0; left: 0; right: 0;
+    z-index: 60;
+    background: transparent;
+    border-bottom: 1px solid transparent;
+    transition: background-color .35s ease, backdrop-filter .35s ease, border-color .35s ease, padding .35s ease;
+  }
+  .nav.scrolled {
+    background: rgba(3,8,20,0.78);
+    backdrop-filter: blur(14px) saturate(140%);
+    -webkit-backdrop-filter: blur(14px) saturate(140%);
+    border-bottom: 1px solid var(--border-subtle);
+  }
+  .nav-link { position: relative; color: rgba(245,241,232,0.78); transition: color .2s ease; }
+  .nav-link::after {
+    content: ''; position: absolute; left: 0; right: 0; bottom: -7px;
+    height: 1px; background: var(--gold);
+    transform: scaleX(0); transform-origin: center;
+    transition: transform .25s ease;
+  }
+  .nav-link:hover { color: var(--cream); }
+  .nav-link:hover::after { transform: scaleX(1); }
+
+  /* ===== Hero layout ===== */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    max-height: 100vh;
+    padding-top: 96px;
+    padding-bottom: 56px;
+    display: flex;
+    align-items: center;
+  }
+  @media (max-width: 767px) {
+    .hero { min-height: auto; max-height: none; padding-top: 96px; padding-bottom: 64px; }
+  }
+  .hero-vertical {
+    position: absolute;
+    right: 28px;
+    top: 50%;
+    transform: translateY(-50%) rotate(180deg);
+    writing-mode: vertical-rl;
+    color: var(--gold);
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: 10px;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    display: flex; align-items: center; gap: 18px;
+  }
+  .hero-vertical::before {
+    content: '';
+    width: 1px;
+    height: 80px;
+    background: linear-gradient(180deg, transparent, var(--gold), transparent);
+    display: block;
+  }
+  @media (max-width: 1023px) { .hero-vertical { display: none; } }
+
+  /* ===== Corner brackets ===== */
+  .brackets { position: relative; }
+  .brackets::before, .brackets::after,
+  .brackets > .br-tl, .brackets > .br-br {
+    content: ''; position: absolute; width: 16px; height: 16px;
+    border-color: var(--gold);
+    pointer-events: none;
+  }
+  .brackets::before { top: 10px; left: 10px; border-top: 1px solid; border-left: 1px solid; }
+  .brackets::after { top: 10px; right: 10px; border-top: 1px solid; border-right: 1px solid; }
+  .brackets .br-bl { position: absolute; bottom: 10px; left: 10px; width: 16px; height: 16px; border-bottom: 1px solid var(--gold); border-left: 1px solid var(--gold); }
+  .brackets .br-br { bottom: 10px; right: 10px; border-bottom: 1px solid; border-right: 1px solid; }
+
+  /* ===== Reveal animations ===== */
+  .reveal {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity .9s cubic-bezier(.2,.7,.2,1), transform .9s cubic-bezier(.2,.7,.2,1);
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* Hero stagger */
+  .hero-stagger > * { opacity: 0; transform: translateY(14px); }
+  .hero-stagger.go > * { animation: heroIn .9s cubic-bezier(.2,.7,.2,1) forwards; }
+  .hero-stagger.go > *:nth-child(1) { animation-delay: 60ms; }
+  .hero-stagger.go > *:nth-child(2) { animation-delay: 200ms; }
+  .hero-stagger.go > *:nth-child(3) { animation-delay: 340ms; }
+  .hero-stagger.go > *:nth-child(4) { animation-delay: 480ms; }
+  .hero-stagger.go > *:nth-child(5) { animation-delay: 620ms; }
+  @keyframes heroIn { to { opacity: 1; transform: translateY(0); } }
+
+  /* ===== Stats ===== */
+  .stat-num {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-feature-settings: 'tnum' 1;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    color: var(--gold);
+  }
+
+  /* ===== Slack mockup ===== */
+  .slack-frame {
+    background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+    border: 1px solid var(--border-subtle);
+    border-radius: 14px;
+    overflow: hidden;
+  }
+  .slack-header {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 14px 18px;
+    border-bottom: 1px solid var(--border-subtle);
+    background: rgba(245,241,232,0.025);
+  }
+  .slack-dot { width: 11px; height: 11px; border-radius: 50%; display: inline-block; }
+  .slack-row {
+    display: flex; gap: 14px; padding: 14px 18px;
+    border-bottom: 1px solid var(--border-subtle);
+    align-items: flex-start;
+  }
+  .slack-row:last-child { border-bottom: 0; }
+  .slack-avatar { width: 36px; height: 36px; border-radius: 9px; flex: none; display: flex; align-items: center; justify-content: center; font-weight: 600; color: #1a1408; font-family: 'JetBrains Mono', monospace; font-size: 13px; }
+  .skel { height: 9px; border-radius: 4px; background: linear-gradient(90deg, rgba(245,241,232,0.10), rgba(245,241,232,0.04)); }
+
+  /* ===== FAQ ===== */
+  details { border-top: 1px solid var(--border-subtle); }
+  details:last-of-type { border-bottom: 1px solid var(--border-subtle); }
+  summary { list-style: none; cursor: pointer; padding: 16px 0; }
+  summary::-webkit-details-marker { display: none; }
+  .faq-icon { transition: transform .3s cubic-bezier(.2,.7,.2,1); color: var(--gold); }
+  details[open] .faq-icon { transform: rotate(45deg); }
+  details[open] summary { color: var(--cream); }
+
+  /* ===== Pricing popular badge ===== */
+  .popular-ribbon {
+    position: absolute;
+    top: -1px; right: -1px;
+    background: linear-gradient(135deg, var(--gold-soft), var(--gold));
+    color: #1a1408;
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    padding: 7px 14px;
+    border-bottom-left-radius: 12px;
+    font-weight: 600;
+  }
+
+  /* ===== Featured method card accent ===== */
+  .featured-edge {
+    position: relative;
+  }
+  .featured-edge::after {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 3px;
+    background: linear-gradient(180deg, var(--gold) 0%, transparent 100%);
+    border-radius: 2px 0 0 2px;
+  }
+
+  /* Mobile menu */
+  .mobile-menu { display: none; }
+  .mobile-menu.open { display: block; }
+
+  /* Tabular figures globally for any `.tabular` */
+  .tabular { font-variant-numeric: tabular-nums; }
+
+  /* Anchor link offset */
+  section[id] { scroll-margin-top: 90px; }
+
+  /* small util */
+  .ring-gold-thin { box-shadow: inset 0 0 0 1px rgba(212,175,55,0.4); }
+
+  /* ===== Community / Inside the room ===== */
+  .community-section {
+    width: 100%;
+    padding: 48px 0;
+  }
+  @media (min-width: 768px) {
+    .community-section { padding: 80px 0; }
+  }
+  .community-frame {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  }
+  .community-img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  @media (min-width: 768px) {
+    .community-img { max-height: 600px; }
+  }
+  .community-overlay {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: rgba(3,8,20,0.15);
+    box-shadow:
+      inset 0 24px 40px -20px rgba(3,8,20,0.55),
+      inset 0 -24px 40px -20px rgba(3,8,20,0.55);
+  }
+
+</style>
+</head>
+
+<body>
+
+  <!-- Scroll progress -->
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+  <!-- ======================= 1. STICKY NAV ======================= -->
+  <header id="nav" class="nav">
+    <div class="max-w-7xl mx-auto px-5 md:px-8 h-14 md:h-16 flex items-center justify-between">
+
+      <a href="#top" class="flex items-center gap-2.5 group">
+        <span class="inline-block w-2 h-2 rounded-full bg-gold" style="box-shadow: 0 0 10px rgba(212,175,55,0.7);"></span>
+        <span class="font-display italic font-medium text-cream text-[18px] tracking-tight">ECA</span>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-9 text-[13px]">
+        <a href="#method"     class="nav-link">The Method</a>
+        <a href="#inside"     class="nav-link">Inside</a>
+        <a href="#investment" class="nav-link">Investment</a>
+        <a href="#apply"      class="nav-link">Apply</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <a href="https://instagram.com/shaunholden_lifecoaching" target="_blank" rel="noopener"
+           class="btn btn-gold hidden sm:inline-flex !py-2.5 !px-5 !text-[12px] tracking-wider">
+          DM ECA READY
+        </a>
+        <button id="navToggle" aria-label="Open menu" class="md:hidden p-2 text-cream/80 hover:text-cream">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div id="mobileMenu" class="mobile-menu md:hidden border-t border-white/5" style="background: rgba(3,8,20,0.95); backdrop-filter: blur(12px);">
+      <div class="px-5 py-5 flex flex-col gap-4 text-cream/85 text-[14px]">
+        <a href="#method"     class="py-1">The Method</a>
+        <a href="#inside"     class="py-1">Inside</a>
+        <a href="#investment" class="py-1">Investment</a>
+        <a href="#apply"      class="py-1">Apply</a>
+        <a href="https://instagram.com/shaunholden_lifecoaching" target="_blank" rel="noopener"
+           class="btn btn-gold mt-2 !text-[12px] tracking-wider">DM ECA READY</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <span id="top"></span>
+
+    <!-- ======================= 2. HERO ======================= -->
+    <section class="hero">
+      <div class="hero-vertical">A coaching scale system for early-stage coaches</div>
+
+      <div class="max-w-7xl mx-auto px-5 md:px-8 w-full">
+        <div class="grid grid-cols-12 gap-8 items-end">
+
+          <div class="col-span-12 lg:col-span-10 hero-stagger" id="heroStagger">
+
+            <!-- 1: eyebrow + rule -->
+            <div class="flex items-center gap-4 mb-5 lg:hidden">
+              <p class="eyebrow">A coaching scale system for early-stage coaches</p>
+            </div>
+            <div class="hidden lg:flex items-center gap-4 mb-5">
+              <p class="eyebrow">Early-stage coach scale system</p>
+              <span class="eyebrow-rule"></span>
+              <span class="font-mono text-[10px] tracking-[0.3em] uppercase" style="color: var(--text-subtle);">ECA / 2026</span>
+            </div>
+
+            <!-- 2: headline -->
+            <h1 class="h-hero">
+              From Coach to <span class="accent">£10k&ndash;£20k</span> months.
+            </h1>
+
+            <!-- 3: sub -->
+            <p class="hero-sub mt-6 max-w-2xl">
+              The system that takes coaches from inconsistent £2-3k months to predictable £10-20k months. Without burning out. Without ego. Without selling your soul.
+            </p>
+
+            <!-- 4: buttons -->
+            <div class="mt-7 flex flex-col sm:flex-row gap-3">
+              <a href="https://instagram.com/shaunholden_lifecoaching" target="_blank" rel="noopener" class="btn btn-gold">
+                DM 'ECA READY' on Instagram
+                <span class="ml-2.5 inline-block">&rarr;</span>
+              </a>
+              <a href="#method" class="btn btn-outline">
+                See how it works
+              </a>
+            </div>
+
+            <!-- 5: footnote -->
+            <p class="mt-5 text-[11px] font-mono tracking-wider uppercase" style="color: var(--text-subtle);">
+              Spaces are limited &middot; Direct application only
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="hairline"></div>
+
+    <!-- ======================= 3. SOCIAL PROOF BAR ======================= -->
+    <section class="py-10 md:py-14" style="background: linear-gradient(180deg, rgba(44,142,255,0.04), transparent);">
+      <div class="max-w-7xl mx-auto px-5 md:px-8 reveal">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-0 items-center text-center">
+
+          <div class="md:border-r md:border-r-[var(--border-blue)] md:px-6">
+            <div class="font-mono text-[11px] tracking-[0.22em] uppercase mb-2" style="color: var(--blue-soft);">Coaches helped</div>
+            <div class="font-display text-3xl md:text-4xl tabular" style="color: var(--cream);">
+              <span class="counter" data-target="209">0</span>
+              <span class="text-cream/80 font-sans font-normal text-[15px] md:text-[16px] block mt-1">in 18 months</span>
+            </div>
+          </div>
+
+          <div class="md:px-6">
+            <div class="font-mono text-[11px] tracking-[0.22em] uppercase mb-2" style="color: var(--blue-soft);">Niches</div>
+            <div class="font-display text-3xl md:text-4xl tabular" style="color: var(--cream);">
+              <span class="counter" data-target="23">0</span>
+              <span class="text-cream/80 font-sans font-normal text-[15px] md:text-[16px] block mt-1">different niches</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="hairline"></div>
+
+    <!-- ======================= 4. FOUNDER ======================= -->
+    <section id="about" class="py-16 md:py-24">
+      <div class="max-w-7xl mx-auto px-5 md:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12 items-start">
+
+          <!-- Photo (col-span-2) with vertical offset -->
+          <div class="lg:col-span-2 reveal lg:mt-16">
+            <div class="rounded-[10px] overflow-hidden"
+                 style="aspect-ratio: 3 / 4; border: 1px solid rgba(212,175,55,0.45); background: #04102a;">
+              <img
+                src="images/shaun-portrait.jpg"
+                alt="Shaun Holden, founder of Elite Coaching Academy"
+                loading="lazy"
+                style="width: 100%; height: 100%; object-fit: cover; object-position: center; display: block;" />
+            </div>
+          </div>
+
+          <!-- Text (col-span-3) -->
+          <div class="lg:col-span-3 reveal">
+            <div class="flex items-center gap-3 mb-6">
+              <span class="eyebrow">Who's running this</span>
+              <span class="eyebrow-rule" style="width: 80px;"></span>
+            </div>
+
+            <h2 class="h-section">
+              I scaled to <em>£52k/m</em> doing it wrong.<br/>Then doubled it doing it right.
+            </h2>
+
+            <div class="mt-9 space-y-5 text-[16px] md:text-[17px] leading-[1.7]" style="color: rgba(245,241,232,0.78);">
+              <p>I started coaching 5 years ago. Followed every guru playbook. Pushed harder, sold harder, scaled harder. Hit £52k a month and woke up one day knowing every penny of it was ego.</p>
+              <p>So I pivoted. Stopped chasing my own scale and started building coaches.</p>
+              <p>3 years later I'm running Elite Coaching Academy. We've helped 209 coaches in the last 18 months go from £0-5k months to consistent £10-20k+ months. And by doing it the right way, for the right reasons, my own coaching business has scaled to £108k a month.</p>
+              <p>The ECA Method is the playbook from inside that journey. The version I wish I'd been given when I was scrambling for my next £2k client. No ego. No aggressive tactics. No burnout dressed up as ambition.</p>
+            </div>
+
+            <!-- Stats row -->
+            <div class="mt-12 grid grid-cols-3 gap-3 md:gap-5">
+              <div class="card p-5 md:p-6">
+                <div class="stat-num text-[24px] md:text-[28px] leading-none">
+                  <span class="counter tabular" data-target="5">0</span><span>+</span>
+                </div>
+                <div class="mt-3 h-px w-8" style="background: var(--gold);"></div>
+                <div class="mt-3 font-mono text-[11px] tracking-[0.18em] uppercase text-cream/60">Years coaching</div>
+              </div>
+              <div class="card p-5 md:p-6">
+                <div class="stat-num text-[24px] md:text-[28px] leading-none">
+                  <span class="counter tabular" data-target="23">0</span>
+                </div>
+                <div class="mt-3 h-px w-8" style="background: var(--gold);"></div>
+                <div class="mt-3 font-mono text-[11px] tracking-[0.18em] uppercase text-cream/60">Niches scaled</div>
+              </div>
+              <div class="card p-5 md:p-6">
+                <div class="stat-num text-[24px] md:text-[28px] leading-none">
+                  <span class="counter tabular" data-target="209">0</span>
+                </div>
+                <div class="mt-3 h-px w-8" style="background: var(--gold);"></div>
+                <div class="mt-3 font-mono text-[11px] tracking-[0.18em] uppercase text-cream/60">Coaches scaled</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="hairline"></div>
+
+    <!-- ======================= 5. FRAMEWORK ======================= -->
+    <section id="method" class="py-16 md:py-24" style="background:
+      radial-gradient(800px 500px at 90% 0%, rgba(44,142,255,0.06), transparent 60%),
+      linear-gradient(180deg, transparent, rgba(10,36,64,0.35), transparent);">
+      <div class="max-w-7xl mx-auto px-5 md:px-8">
+
+        <div class="reveal max-w-3xl">
+          <div class="flex items-center gap-3 mb-6">
+            <span class="eyebrow">The framework</span>
+            <span class="eyebrow-rule" style="width: 80px;"></span>
+          </div>
+          <h2 class="h-section">The <em>ECA Method</em>&trade;</h2>
+          <p class="h-sub mt-6">Five interlocking phases. We don't skip ahead. Each one earns you the right to the next.</p>
+        </div>
+
+        <!-- Outcome card -->
+        <div class="reveal mt-9 brackets relative text-center" style="border: 1.5px solid var(--gold); border-radius: 14px; padding: 36px 28px; background: linear-gradient(180deg, rgba(212,175,55,0.08), rgba(212,175,55,0.02));">
+          <span class="br-bl"></span>
+          <span class="br-br"></span>
+          <div class="font-mono text-[11px] tracking-[0.3em] uppercase" style="color: var(--gold);">Outcome</div>
+          <p class="font-display mt-5 text-xl md:text-3xl leading-tight" style="color: var(--cream);">
+            Consistent <em>£10-20k+ months.</em>
+          </p>
+          <p class="font-display italic mt-3 text-base md:text-lg leading-snug" style="color: var(--text-muted);">
+            Built around your life, not against it.
+          </p>
+        </div>
+
+        <!-- 5 equal phase cards -->
+        <div class="reveal mt-5 grid grid-cols-1 md:grid-cols-6 lg:grid-cols-10 gap-3 md:gap-4 items-stretch">
+
+          <div class="card card-hover p-6 md:col-span-2 lg:col-span-2 flex flex-col">
+            <div class="font-mono text-[11px] tracking-[0.3em] uppercase" style="color: var(--gold);">01</div>
+            <h3 class="font-display text-lg md:text-xl mt-2" style="color: var(--cream);">Self Sabotage</h3>
+            <div class="my-4 h-px w-8" style="background: var(--gold);"></div>
+            <p class="text-[14px] leading-[1.65] text-cream/70">The hidden ceiling on your income. Identity work. Belief reset. The coach you'll need to become to hold £10k months. We do this FIRST because no system works on a sabotaging operator.</p>
+          </div>
+
+          <div class="card card-hover p-6 md:col-span-2 lg:col-span-2 flex flex-col">
+            <div class="font-mono text-[11px] tracking-[0.3em] uppercase" style="color: var(--gold);">02</div>
+            <h3 class="font-display text-lg md:text-xl mt-2" style="color: var(--cream);">Create</h3>
+            <div class="my-4 h-px w-8" style="background: var(--gold);"></div>
+            <p class="text-[14px] leading-[1.65] text-cream/70">Your offer, your message, your positioning. The asset that makes selling easy because the right people self-qualify before you ever get on a call.</p>
+          </div>
+
+          <div class="card card-hover p-6 md:col-span-2 lg:col-span-2 flex flex-col">
+            <div class="font-mono text-[11px] tracking-[0.3em] uppercase" style="color: var(--gold);">03</div>
+            <h3 class="font-display text-lg md:text-xl mt-2" style="color: var(--cream);">Market</h3>
+            <div class="my-4 h-px w-8" style="background: var(--gold);"></div>
+            <p class="text-[14px] leading-[1.65] text-cream/70">The content + outreach engine. Not viral content. Not 100 DMs into the void. A repeatable rhythm that puts your offer in front of buyers daily.</p>
+          </div>
+
+          <div class="card card-hover p-6 md:col-span-2 md:col-start-2 lg:col-span-2 lg:col-start-auto flex flex-col">
+            <div class="font-mono text-[11px] tracking-[0.3em] uppercase" style="color: var(--gold);">04</div>
+            <h3 class="font-display text-lg md:text-xl mt-2" style="color: var(--cream);">Sell</h3>
+            <div class="my-4 h-px w-8" style="background: var(--gold);"></div>
+            <p class="text-[14px] leading-[1.65] text-cream/70">The frameworks that turn discovery calls into clients. Qualification, structure, objections, follow-up. Stop praying. Start closing.</p>
+          </div>
+
+          <div class="card card-hover p-6 md:col-span-2 lg:col-span-2 flex flex-col">
+            <div class="font-mono text-[11px] tracking-[0.3em] uppercase" style="color: var(--gold);">05</div>
+            <h3 class="font-display text-lg md:text-xl mt-2" style="color: var(--cream);">Deliver</h3>
+            <div class="my-4 h-px w-8" style="background: var(--gold);"></div>
+            <p class="text-[14px] leading-[1.65] text-cream/70">What happens AFTER the sale that turns one client into three. Onboarding, results, retention, referrals. The bit most coaches ignore that drives the next year of revenue.</p>
+          </div>
+        </div>
+
+        <p class="reveal mt-10 text-center font-display italic text-[16px] md:text-[18px] max-w-3xl mx-auto leading-snug" style="color: var(--cream);">
+          &ldquo;You don't need 100 things. You need <span style="color: var(--gold);">5 things</span>, in the right order, repeated until they're boring.&rdquo;
+        </p>
+      </div>
+    </section>
+
+    <div class="hairline"></div>
+
+    <!-- ======================= 6. INSIDE THE ROOM ======================= -->
+    <section id="community" class="community-section">
+      <div class="community-frame">
+        <img
+          src="images/manchester-mastermind.jpg"
+          alt="ECA coaches at Manchester Mastermind event"
+          loading="lazy"
+          class="community-img" />
+        <div class="community-overlay" aria-hidden="true"></div>
+      </div>
+    </section>
+
+    <div class="hairline"></div>
+
+    <!-- ======================= 7. WHAT'S INSIDE ======================= -->
+    <section id="inside" class="py-16 md:py-24">
+      <div class="max-w-7xl mx-auto px-5 md:px-8">
+
+        <div class="reveal max-w-3xl">
+          <div class="flex items-center gap-3 mb-6">
+            <span class="eyebrow">What's inside</span>
+            <span class="eyebrow-rule" style="width: 80px;"></span>
+          </div>
+          <h2 class="h-section">The full <em>delivery</em>.<br/>Nothing watered down.</h2>
+          <p class="h-sub mt-6">6 months. Daily access to me. Real systems installed. We track your progress in your own private dashboard.</p>
+        </div>
+
+        <div class="reveal mt-9 md:mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4">
+          <!-- 1 -->
+          <div class="card card-hover p-5 md:p-6">
+            <div class="flex items-center justify-between mb-5">
+              <div class="font-mono text-[10px] tracking-[0.3em] uppercase" style="color: var(--blue-soft);">01 / Day one</div>
+              <div class="w-7 h-7 rounded-full flex items-center justify-center" style="border: 1px solid var(--border-gold);"><span class="w-1.5 h-1.5 rounded-full" style="background: var(--gold);"></span></div>
+            </div>
+            <h3 class="font-display text-[18px] md:text-[20px] leading-snug" style="color: var(--cream);">75-min Roadmap Call with <em>Shaun</em></h3>
+            <div class="my-5 h-px w-10" style="background: var(--gold);"></div>
+            <p class="text-[14.5px] leading-[1.7] text-cream/70">Day 1. Personal launch plan. Goals locked. Targets set. The plan you'll follow for 6 months.</p>
+          </div>
+          <!-- 2 -->
+          <div class="card card-hover p-5 md:p-6">
+            <div class="flex items-center justify-between mb-5">
+              <div class="font-mono text-[10px] tracking-[0.3em] uppercase" style="color: var(--blue-soft);">02 / Weekly</div>
+              <div class="w-7 h-7 rounded-full flex items-center justify-center" style="border: 1px solid var(--border-gold);"><span class="w-1.5 h-1.5 rounded-full" style="background: var(--gold);"></span></div>
+            </div>
+            <h3 class="font-display text-[18px] md:text-[20px] leading-snug" style="color: var(--cream);">8 Group Calls <em>Per Month</em></h3>
+            <div class="my-5 h-px w-10" style="background: var(--gold);"></div>
+            <p class="text-[14.5px] leading-[1.7] text-cream/70">Twice a week. Strategy, hot seats, Q&amp;A, accountability. The room sharpens you.</p>
+          </div>
+          <!-- 3 -->
+          <div class="card card-hover p-5 md:p-6">
+            <div class="flex items-center justify-between mb-5">
+              <div class="font-mono text-[10px] tracking-[0.3em] uppercase" style="color: var(--blue-soft);">03 / Daily</div>
+              <div class="w-7 h-7 rounded-full flex items-center justify-center" style="border: 1px solid var(--border-gold);"><span class="w-1.5 h-1.5 rounded-full" style="background: var(--gold);"></span></div>
+            </div>
+            <h3 class="font-display text-[18px] md:text-[20px] leading-snug" style="color: var(--cream);">Daily Slack <em>Access to Me</em></h3>
+            <div class="my-5 h-px w-10" style="background: var(--gold);"></div>
+            <p class="text-[14.5px] leading-[1.7] text-cream/70">Not a junior coach. Me. DM me anytime. Most clients hear back within hours.</p>
+          </div>
+          <!-- 4 -->
+          <div class="card card-hover p-5 md:p-6">
+            <div class="flex items-center justify-between mb-5">
+              <div class="font-mono text-[10px] tracking-[0.3em] uppercase" style="color: var(--blue-soft);">04 / Fortnightly</div>
+              <div class="w-7 h-7 rounded-full flex items-center justify-center" style="border: 1px solid var(--border-gold);"><span class="w-1.5 h-1.5 rounded-full" style="background: var(--gold);"></span></div>
+            </div>
+            <h3 class="font-display text-[18px] md:text-[20px] leading-snug" style="color: var(--cream);">Fortnightly 1:1 with your <em>Client Success Coach</em></h3>
+            <div class="my-5 h-px w-10" style="background: var(--gold);"></div>
+            <p class="text-[14.5px] leading-[1.7] text-cream/70">Personal accountability. Personal review of your numbers. Adjust the plan as you go.</p>
+          </div>
+          <!-- 5 -->
+          <div class="card card-hover p-5 md:p-6">
+            <div class="flex items-center justify-between mb-5">
+              <div class="font-mono text-[10px] tracking-[0.3em] uppercase" style="color: var(--blue-soft);">05 / Always</div>
+              <div class="w-7 h-7 rounded-full flex items-center justify-center" style="border: 1px solid var(--border-gold);"><span class="w-1.5 h-1.5 rounded-full" style="background: var(--gold);"></span></div>
+            </div>
+            <h3 class="font-display text-[18px] md:text-[20px] leading-snug" style="color: var(--cream);">Your Private <em>ECA Dashboard</em></h3>
+            <div class="my-5 h-px w-10" style="background: var(--gold);"></div>
+            <p class="text-[14.5px] leading-[1.7] text-cream/70">Track your numbers. See your Next Move every week based on your data. Personalised guidance built on your real performance, not vibes.</p>
+          </div>
+          <!-- 6 -->
+          <div class="card card-hover p-5 md:p-6">
+            <div class="flex items-center justify-between mb-5">
+              <div class="font-mono text-[10px] tracking-[0.3em] uppercase" style="color: var(--blue-soft);">06 / Library</div>
+              <div class="w-7 h-7 rounded-full flex items-center justify-center" style="border: 1px solid var(--border-gold);"><span class="w-1.5 h-1.5 rounded-full" style="background: var(--gold);"></span></div>
+            </div>
+            <h3 class="font-display text-[18px] md:text-[20px] leading-snug" style="color: var(--cream);">Templates, Frameworks &amp; <em>Swipes</em></h3>
+            <div class="my-5 h-px w-10" style="background: var(--gold);"></div>
+            <p class="text-[14.5px] leading-[1.7] text-cream/70">Sales scripts. DM frameworks. Content templates. Ad scripts. The exact tools we use, given to you.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="hairline"></div>
+
+    <!-- ======================= 8. FILTER ======================= -->
+    <section class="py-16 md:py-24" style="background:
+      radial-gradient(700px 400px at 10% 0%, rgba(44,142,255,0.06), transparent 60%);">
+      <div class="max-w-7xl mx-auto px-5 md:px-8">
+
+        <div class="reveal max-w-3xl">
+          <div class="flex items-center gap-3 mb-6">
+            <span class="eyebrow">Long term game. Long term people.</span>
+            <span class="eyebrow-rule" style="width: 80px;"></span>
+          </div>
+          <h2 class="h-section">Who this is <em>for</em>.<br/>And who it isn't.</h2>
+        </div>
+
+        <div class="reveal mt-9 md:mt-12 grid grid-cols-1 md:grid-cols-2 gap-4 items-start">
+          <!-- For -->
+          <div class="card p-4 md:p-6 h-full" style="border-color: rgba(34,197,94,0.22);">
+            <div class="flex items-center gap-3 mb-5">
+              <div class="w-8 h-8 flex-none rounded-full flex items-center justify-center text-[14px] leading-none" style="background: rgba(34,197,94,0.15); color: #4ade80;">&#10003;</div>
+              <h3 class="font-display italic text-[18px] md:text-[20px] leading-tight" style="color: var(--cream);">If this is you, we'll work well together</h3>
+            </div>
+            <ul class="text-[15px] leading-[1.55]" style="color: rgba(245,241,232,0.82);">
+              <li class="flex items-start gap-3 py-3 border-b border-white/5"><span class="text-green-400 flex-none leading-[1.55]">&#10003;</span><span>You're a coach (or about to be) and you're serious about turning it into a real business</span></li>
+              <li class="flex items-start gap-3 py-3 border-b border-white/5"><span class="text-green-400 flex-none leading-[1.55]">&#10003;</span><span>You're making £0-£5k/m right now and ready to scale</span></li>
+              <li class="flex items-start gap-3 py-3 border-b border-white/5"><span class="text-green-400 flex-none leading-[1.55]">&#10003;</span><span>You're willing to work on YOU before you work on tactics</span></li>
+              <li class="flex items-start gap-3 py-3 border-b border-white/5"><span class="text-green-400 flex-none leading-[1.55]">&#10003;</span><span>You're allergic to fluff. You want a system that works.</span></li>
+              <li class="flex items-start gap-3 py-3 border-b border-white/5"><span class="text-green-400 flex-none leading-[1.55]">&#10003;</span><span>You can give it 5+ hours per week minimum</span></li>
+              <li class="flex items-start gap-3 py-3"><span class="text-green-400 flex-none leading-[1.55]">&#10003;</span><span>You're done chasing the next shiny tactic and ready to commit to a method</span></li>
+            </ul>
+          </div>
+
+          <!-- Not -->
+          <div class="card p-4 md:p-6 h-full" style="border-color: rgba(239,68,68,0.22);">
+            <div class="flex items-center gap-3 mb-5">
+              <div class="w-8 h-8 flex-none rounded-full flex items-center justify-center text-[14px] leading-none" style="background: rgba(239,68,68,0.15); color: #f87171;">&#10007;</div>
+              <h3 class="font-display italic text-[18px] md:text-[20px] leading-tight" style="color: var(--cream);">This isn't going to fit</h3>
+            </div>
+            <ul class="text-[15px] leading-[1.55]" style="color: rgba(245,241,232,0.82);">
+              <li class="flex items-start gap-3 py-3 border-b border-white/5"><span class="text-red-400 flex-none leading-[1.55]">&#10007;</span><span>Lazy coaches looking for a magic pill</span></li>
+              <li class="flex items-start gap-3 py-3 border-b border-white/5"><span class="text-red-400 flex-none leading-[1.55]">&#10007;</span><span>Anyone scared of making content</span></li>
+              <li class="flex items-start gap-3 py-3 border-b border-white/5"><span class="text-red-400 flex-none leading-[1.55]">&#10007;</span><span>Anyone unwilling to follow a system</span></li>
+              <li class="flex items-start gap-3 py-3 border-b border-white/5"><span class="text-red-400 flex-none leading-[1.55]">&#10007;</span><span>Anyone who can't commit 5+ hours per week</span></li>
+              <li class="flex items-start gap-3 py-3"><span class="text-red-400 flex-none leading-[1.55]">&#10007;</span><span>Tyre kickers, free advice hunters, perpetual students</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="hairline"></div>
+
+    <!-- ======================= 9. INVESTMENT ======================= -->
+    <section id="investment" class="py-16 md:py-24">
+      <div class="max-w-7xl mx-auto px-5 md:px-8">
+
+        <div class="reveal max-w-3xl">
+          <div class="flex items-center gap-3 mb-6">
+            <span class="eyebrow">The investment</span>
+            <span class="eyebrow-rule" style="width: 80px;"></span>
+          </div>
+          <h2 class="h-section"><em>Two</em> ways to join.</h2>
+          <p class="h-sub mt-6">Most clients recoup the full investment within their first 60 days.</p>
+        </div>
+
+        <div class="reveal mt-9 md:mt-12 grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-5">
+
+          <!-- PIF -->
+          <div class="card brackets relative p-5 md:p-6">
+            <span class="br-bl"></span>
+            <span class="br-br"></span>
+            <div class="font-mono text-[10px] tracking-[0.3em] uppercase mb-2" style="color: var(--text-muted);">Option A</div>
+            <h3 class="font-display italic text-[19px] md:text-[22px] mb-7" style="color: var(--cream);">Pay In Full</h3>
+
+            <div class="flex items-baseline gap-2 mb-2">
+              <span class="font-display italic text-[18px]" style="color: var(--gold);">£</span>
+              <span class="stat-num text-[48px] md:text-[60px] leading-none tabular" style="color: var(--cream);">5,400</span>
+            </div>
+            <p class="font-mono text-[11px] tracking-[0.2em] uppercase text-cream/50 mb-6">Single payment</p>
+
+            <div class="h-px w-full mb-6" style="background: var(--border-subtle);"></div>
+
+            <ul class="space-y-3 text-[15px] mb-7" style="color: rgba(245,241,232,0.78);">
+              <li class="flex gap-3"><span style="color: var(--gold);">&#10003;</span>Single payment</li>
+              <li class="flex gap-3"><span style="color: var(--gold);">&#10003;</span>6 months full access</li>
+            </ul>
+
+            <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full font-mono text-[10px] tracking-[0.2em] uppercase" style="background: rgba(34,197,94,0.10); color: #4ade80; border: 1px solid rgba(34,197,94,0.32);">
+              <span class="w-1.5 h-1.5 rounded-full" style="background: #4ade80;"></span>
+              Save £1,200 vs monthly
+            </span>
+          </div>
+
+          <!-- PAYE - Popular -->
+          <div class="card brackets relative p-5 md:p-6" style="border: 1.5px solid var(--gold); box-shadow: 0 30px 80px -30px rgba(212,175,55,0.30), inset 0 1px 0 rgba(255,255,255,0.04); background: linear-gradient(180deg, rgba(212,175,55,0.06), rgba(212,175,55,0.01)), var(--navy-elevated);">
+            <span class="br-bl" style="border-color: var(--gold);"></span>
+            <span class="br-br" style="border-color: var(--gold);"></span>
+            <div class="popular-ribbon">Most Popular</div>
+
+            <div class="font-mono text-[10px] tracking-[0.3em] uppercase mb-2" style="color: var(--gold);">Option B</div>
+            <h3 class="font-display italic text-[19px] md:text-[22px] mb-7" style="color: var(--cream);">Pay As You Earn</h3>
+
+            <div class="flex items-baseline gap-2 mb-2">
+              <span class="font-display italic text-[18px]" style="color: var(--gold);">£</span>
+              <span class="stat-num text-[48px] md:text-[60px] leading-none tabular" style="color: var(--cream);">1,100</span>
+              <span class="font-display italic text-[20px] text-cream/60">/month</span>
+            </div>
+            <p class="font-mono text-[11px] tracking-[0.2em] uppercase text-cream/50 mb-6">6 monthly payments</p>
+
+            <div class="h-px w-full mb-6" style="background: var(--border-gold);"></div>
+
+            <ul class="space-y-3 text-[15px] mb-7" style="color: rgba(245,241,232,0.85);">
+              <li class="flex gap-3"><span style="color: var(--gold);">&#10003;</span>6 monthly payments</li>
+              <li class="flex gap-3"><span style="color: var(--gold);">&#10003;</span>Total: £6,600</li>
+            </ul>
+
+            <p class="font-display italic text-[14px]" style="color: var(--cream); opacity: 0.8;">For coaches who want to grow into the investment</p>
+          </div>
+        </div>
+
+        <p class="reveal mt-12 text-center font-display italic text-[17px] md:text-[19px] max-w-3xl mx-auto" style="color: var(--cream); opacity: 0.85;">
+          Both options include the full programme. <span style="color: var(--gold);">No hidden upsells.</span> No tier games. Same delivery, same access, same dashboard.
+        </p>
+
+        <div class="reveal mt-10 flex justify-center">
+          <a href="https://instagram.com/shaunholden_lifecoaching" target="_blank" rel="noopener" class="btn btn-gold !py-5 !px-9 !text-[15px]">
+            DM 'ECA READY' on Instagram
+            <span class="ml-2.5">&rarr;</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <div class="hairline"></div>
+
+    <!-- ======================= 10. FAQ ======================= -->
+    <section class="py-16 md:py-24" style="background: linear-gradient(180deg, transparent, rgba(10,36,64,0.35), transparent);">
+      <div class="max-w-4xl mx-auto px-5 md:px-8">
+
+        <div class="reveal">
+          <div class="flex items-center gap-3 mb-6">
+            <span class="eyebrow">Honest answers</span>
+            <span class="eyebrow-rule" style="width: 80px;"></span>
+          </div>
+          <h2 class="h-section">You're going to ask.<br/>Here are the <em>answers</em>.</h2>
+        </div>
+
+        <div class="reveal mt-9 md:mt-12">
+
+          <details>
+            <summary class="flex items-start justify-between gap-6">
+              <span class="font-display text-[18px] md:text-[20px] leading-snug" style="color: var(--cream);">How fast will I see <em>results</em>?</span>
+              <span class="faq-icon mt-2 text-2xl leading-none flex-none">+</span>
+            </summary>
+            <p class="text-[15.5px] leading-[1.75] pb-6 max-w-3xl" style="color: rgba(245,241,232,0.78);">Most clients close their first £3-5k client within the first 60 days. Hitting £10k+ months happens before month 4 if they execute. Speed depends entirely on you, how fast you implement, how willing you are to do the inner work, how many hours you put in.</p>
+          </details>
+
+          <details>
+            <summary class="flex items-start justify-between gap-6">
+              <span class="font-display text-[18px] md:text-[20px] leading-snug" style="color: var(--cream);">Do I need to be making <em>money already</em>?</span>
+              <span class="faq-icon mt-2 text-2xl leading-none flex-none">+</span>
+            </summary>
+            <p class="text-[15.5px] leading-[1.75] pb-6 max-w-3xl" style="color: rgba(245,241,232,0.78);">No. We work with coaches at £0/m and coaches at £5k/m. The method works at both ends. What matters is you have an offer (or are willing to define one in week 1) and you're ready to follow a system.</p>
+          </details>
+
+          <details>
+            <summary class="flex items-start justify-between gap-6">
+              <span class="font-display text-[18px] md:text-[20px] leading-snug" style="color: var(--cream);">I've been burnt by coaching programmes before. <em>Why is this different</em>?</span>
+              <span class="faq-icon mt-2 text-2xl leading-none flex-none">+</span>
+            </summary>
+            <p class="text-[15.5px] leading-[1.75] pb-6 max-w-3xl" style="color: rgba(245,241,232,0.78);">You probably joined a programme that sold you tactics with no identity work. Or one with junior coaches you never spoke to the founder. Or one with no real system, just vibes and motivation. ECA isn't that. You get me on Slack daily, a structured 5-phase method, real accountability, and a dashboard that tracks whether the system is actually working for you.</p>
+          </details>
+
+          <details>
+            <summary class="flex items-start justify-between gap-6">
+              <span class="font-display text-[18px] md:text-[20px] leading-snug" style="color: var(--cream);">How much <em>time</em> per week?</span>
+              <span class="faq-icon mt-2 text-2xl leading-none flex-none">+</span>
+            </summary>
+            <p class="text-[15.5px] leading-[1.75] pb-6 max-w-3xl" style="color: rgba(245,241,232,0.78);">Minimum 5 hours of focused implementation. Calls are 8 per month. Slack you can engage with on your own rhythm. The work is the work. If you can't give it 5 hours a week, this isn't the time.</p>
+          </details>
+
+          <details>
+            <summary class="flex items-start justify-between gap-6">
+              <span class="font-display text-[18px] md:text-[20px] leading-snug" style="color: var(--cream);">What if I <em>can't afford it</em>?</span>
+              <span class="faq-icon mt-2 text-2xl leading-none flex-none">+</span>
+            </summary>
+            <p class="text-[15.5px] leading-[1.75] pb-6 max-w-3xl" style="color: rgba(245,241,232,0.78);">Pay As You Earn at £1,100/month was built for exactly this. Most coaches make their first payment back in their first month. If even £1,100 is impossible right now, you're probably not ready, focus on getting your first 1-2 clients, then come back.</p>
+          </details>
+
+          <details>
+            <summary class="flex items-start justify-between gap-6">
+              <span class="font-display text-[18px] md:text-[20px] leading-snug" style="color: var(--cream);">Can I really <em>DM you directly</em>?</span>
+              <span class="faq-icon mt-2 text-2xl leading-none flex-none">+</span>
+            </summary>
+            <p class="text-[15.5px] leading-[1.75] pb-6 max-w-3xl" style="color: rgba(245,241,232,0.78);">Yes. Daily. The promise of founder access is the part most programmes lie about. I'm in Slack every day responding to clients. Ask any current ECA member.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <div class="hairline"></div>
+
+    <!-- ======================= 11. FINAL CTA ======================= -->
+    <section id="apply" class="py-16 md:py-24 relative overflow-hidden" style="background:
+      radial-gradient(900px 500px at 50% 0%, rgba(212,175,55,0.10), transparent 70%),
+      radial-gradient(700px 400px at 50% 100%, rgba(44,142,255,0.08), transparent 70%);">
+      <div class="max-w-4xl mx-auto px-5 md:px-8 text-center relative">
+
+        <div class="reveal flex items-center justify-center gap-3 mb-7">
+          <span class="eyebrow-rule" style="width: 60px;"></span>
+          <span class="eyebrow">Limited spaces this month</span>
+          <span class="eyebrow-rule" style="width: 60px;"></span>
+        </div>
+
+        <h2 class="reveal h-section text-center" style="font-size: clamp(36px, 5vw, 56px);">Bet on <em>yourself</em>.</h2>
+        <p class="reveal h-sub mt-7 max-w-2xl mx-auto text-center" style="margin-left: auto; margin-right: auto;">Small group each month. Real selection. If you've read this far and you fit the criteria, now's the time.</p>
+
+        <div class="reveal mt-12 max-w-2xl mx-auto card brackets relative text-left p-5 md:p-7">
+          <span class="br-bl"></span>
+          <span class="br-br"></span>
+          <div class="font-mono text-[10px] tracking-[0.3em] uppercase mb-6" style="color: var(--gold);">You must agree to all</div>
+
+          <ul class="space-y-5">
+            <li class="flex items-start gap-5">
+              <span class="flex-none w-9 h-9 rounded-md flex items-center justify-center font-mono font-medium text-[13px]" style="border: 1px solid var(--border-gold); background: rgba(212,175,55,0.06); color: var(--gold);">01</span>
+              <span class="text-[15.5px] leading-[1.6] pt-1" style="color: rgba(245,241,232,0.88);">You're a coach (or about to be) and serious about scaling</span>
+            </li>
+            <li class="flex items-start gap-5">
+              <span class="flex-none w-9 h-9 rounded-md flex items-center justify-center font-mono font-medium text-[13px]" style="border: 1px solid var(--border-gold); background: rgba(212,175,55,0.06); color: var(--gold);">02</span>
+              <span class="text-[15.5px] leading-[1.6] pt-1" style="color: rgba(245,241,232,0.88);">You're at £0-£5k/m right now</span>
+            </li>
+            <li class="flex items-start gap-5">
+              <span class="flex-none w-9 h-9 rounded-md flex items-center justify-center font-mono font-medium text-[13px]" style="border: 1px solid var(--border-gold); background: rgba(212,175,55,0.06); color: var(--gold);">03</span>
+              <span class="text-[15.5px] leading-[1.6] pt-1" style="color: rgba(245,241,232,0.88);">You can commit 5+ hours per week minimum</span>
+            </li>
+            <li class="flex items-start gap-5">
+              <span class="flex-none w-9 h-9 rounded-md flex items-center justify-center font-mono font-medium text-[13px]" style="border: 1px solid var(--border-gold); background: rgba(212,175,55,0.06); color: var(--gold);">04</span>
+              <span class="text-[15.5px] leading-[1.6] pt-1" style="color: rgba(245,241,232,0.88);">You're willing to do the inner work, not just the tactics</span>
+            </li>
+            <li class="flex items-start gap-5">
+              <span class="flex-none w-9 h-9 rounded-md flex items-center justify-center font-mono font-medium text-[13px]" style="border: 1px solid var(--border-gold); background: rgba(212,175,55,0.06); color: var(--gold);">05</span>
+              <span class="text-[15.5px] leading-[1.6] pt-1" style="color: rgba(245,241,232,0.88);">You can handle direct, honest feedback (no fluff)</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="reveal mt-12 flex justify-center">
+          <a href="https://instagram.com/shaunholden_lifecoaching" target="_blank" rel="noopener" class="btn btn-gold !py-6 !px-10 !text-[16px] md:!text-[17px]">
+            DM 'ECA READY' on Instagram
+            <span class="ml-3">&rarr;</span>
+          </a>
+        </div>
+        <p class="reveal mt-5 font-mono text-[11px] tracking-[0.2em] uppercase" style="color: var(--text-subtle);">
+          @shaunholden_lifecoaching &middot; I personally read every one.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ======================= 12. FOOTER ======================= -->
+  <footer class="border-t border-white/5" style="background: var(--navy-deep);">
+    <div class="max-w-7xl mx-auto px-5 md:px-8 py-12 grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+
+      <div class="flex items-center gap-2.5">
+        <span class="inline-block w-2 h-2 rounded-full bg-gold" style="box-shadow: 0 0 10px rgba(212,175,55,0.7);"></span>
+        <span class="font-display italic text-[17px]" style="color: var(--cream);">Elite Coaching Academy</span>
+      </div>
+
+      <p class="font-mono text-[11px] tracking-[0.15em] uppercase text-center" style="color: var(--text-subtle);">
+        &copy; 2026 Shaun Holden Coaching &middot; Built for coaches who want a real business.
+      </p>
+
+      <div class="flex items-center gap-5 text-[13px] md:justify-end">
+        <a href="https://instagram.com/shaunholden_lifecoaching" target="_blank" rel="noopener" class="text-cream/70 hover:text-gold transition-colors">Instagram</a>
+        <span class="text-cream/20">/</span>
+        <a href="https://dashboard.shaunholdenlifecoaching.co.uk" target="_blank" rel="noopener" class="text-cream/70 hover:text-gold transition-colors">Dashboard login</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // ===== Sticky nav opacity on scroll =====
+    (function () {
+      var nav = document.getElementById('nav');
+      function onScroll() {
+        if (window.scrollY > 50) nav.classList.add('scrolled');
+        else nav.classList.remove('scrolled');
+      }
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    })();
+
+    // ===== Scroll progress =====
+    (function () {
+      var bar = document.getElementById('scrollProgress');
+      function update() {
+        var h = document.documentElement;
+        var max = h.scrollHeight - h.clientHeight;
+        var pct = max > 0 ? (h.scrollTop / max) * 100 : 0;
+        bar.style.width = pct + '%';
+      }
+      window.addEventListener('scroll', update, { passive: true });
+      window.addEventListener('resize', update);
+      update();
+    })();
+
+    // ===== Mobile menu =====
+    (function () {
+      var btn = document.getElementById('navToggle');
+      var menu = document.getElementById('mobileMenu');
+      if (!btn || !menu) return;
+      btn.addEventListener('click', function () { menu.classList.toggle('open'); });
+      menu.querySelectorAll('a').forEach(function (a) {
+        a.addEventListener('click', function () { menu.classList.remove('open'); });
+      });
+    })();
+
+    // ===== Hero stagger reveal =====
+    (function () {
+      var hero = document.getElementById('heroStagger');
+      if (!hero) return;
+      requestAnimationFrame(function () {
+        setTimeout(function () { hero.classList.add('go'); }, 80);
+      });
+    })();
+
+    // ===== Generic reveal-on-scroll =====
+    (function () {
+      var els = document.querySelectorAll('.reveal');
+      if (!('IntersectionObserver' in window)) {
+        els.forEach(function (el) { el.classList.add('visible'); });
+        return;
+      }
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.10, rootMargin: '0px 0px -60px 0px' });
+      els.forEach(function (el) { io.observe(el); });
+    })();
+
+    // ===== Counter animation =====
+    (function () {
+      function format(n, decimals, asComma) {
+        if (asComma) return Math.round(n).toLocaleString('en-GB');
+        if (decimals) return n.toFixed(decimals);
+        return Math.round(n).toString();
+      }
+      function animate(el) {
+        var target = parseFloat(el.dataset.target);
+        var decimals = parseInt(el.dataset.decimals || '0', 10);
+        var asComma = el.dataset.format === 'comma';
+        var dur = 1500;
+        var start = null;
+        function step(ts) {
+          if (start === null) start = ts;
+          var t = Math.min((ts - start) / dur, 1);
+          var eased = 1 - Math.pow(1 - t, 3);
+          el.textContent = format(target * eased, decimals, asComma);
+          if (t < 1) requestAnimationFrame(step);
+          else el.textContent = format(target, decimals, asComma);
+        }
+        requestAnimationFrame(step);
+      }
+      var counters = document.querySelectorAll('.counter');
+      if (!('IntersectionObserver' in window)) {
+        counters.forEach(animate);
+        return;
+      }
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            animate(entry.target);
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.4 });
+      counters.forEach(function (el) { io.observe(el); });
+    })();
+  </script>
+</body>
+</html>
