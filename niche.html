@@ -248,6 +248,103 @@
     display: block;
   }
 
+  /* ===== Kajabi embed skin (matches the page) ===== */
+  .eca-kajabi-form,
+  .eca-kajabi-form * {
+    font-family: 'Inter Tight', system-ui, sans-serif !important;
+    box-sizing: border-box;
+  }
+  /* Strip any Kajabi-rendered headings/subtitles inside the wrapper */
+  .eca-kajabi-form .kajabi-form__title,
+  .eca-kajabi-form .kajabi-form__subtitle,
+  .eca-kajabi-form .kajabi-form__form-item label {
+    display: none !important;
+  }
+  /* Reset wrapper containers so they sit cleanly inside our .card */
+  .eca-kajabi-form #kajabi-form,
+  .eca-kajabi-form .kajabi-form__content {
+    background: transparent !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    max-width: none !important;
+    width: 100% !important;
+  }
+  .eca-kajabi-form fieldset {
+    border: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 14px !important;
+  }
+  .eca-kajabi-form .kajabi-form__form-item {
+    margin: 0 !important;
+    padding: 0 !important;
+    background: transparent !important;
+  }
+  /* Inputs — dark transparent fill, gold-at-low-opacity border, cream text */
+  .eca-kajabi-form input[type="text"],
+  .eca-kajabi-form input[type="email"] {
+    width: 100% !important;
+    background: rgba(245,241,232,0.04) !important;
+    background-color: rgba(245,241,232,0.04) !important;
+    border: 1px solid var(--border-gold) !important;
+    border-radius: 10px !important;
+    padding: 14px 16px !important;
+    color: var(--cream) !important;
+    font-family: 'Inter Tight', system-ui, sans-serif !important;
+    font-size: 15px !important;
+    font-weight: 400 !important;
+    line-height: 1.4 !important;
+    min-height: 48px !important;
+    box-shadow: none !important;
+    transition: border-color .2s ease, background-color .2s ease, box-shadow .2s ease !important;
+  }
+  .eca-kajabi-form input[type="text"]::placeholder,
+  .eca-kajabi-form input[type="email"]::placeholder {
+    color: var(--text-subtle) !important;
+    opacity: 1 !important;
+  }
+  .eca-kajabi-form input[type="text"]:focus,
+  .eca-kajabi-form input[type="email"]:focus {
+    outline: none !important;
+    border-color: var(--gold) !important;
+    background: rgba(245,241,232,0.06) !important;
+    background-color: rgba(245,241,232,0.06) !important;
+    box-shadow: 0 0 0 3px rgba(212,175,55,0.12) !important;
+  }
+  /* Submit button — matches .btn.btn-gold.btn-full on the rest of the site */
+  .eca-kajabi-form .kajabi-form__btn,
+  .eca-kajabi-form button[type="submit"] {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    background: linear-gradient(180deg, var(--gold-soft), var(--gold)) !important;
+    background-color: var(--gold) !important;
+    color: #1a1408 !important;
+    border: 1px solid var(--gold) !important;
+    border-radius: 999px !important;
+    padding: 14px 24px !important;
+    font-family: 'Inter Tight', system-ui, sans-serif !important;
+    font-weight: 500 !important;
+    font-size: 14px !important;
+    letter-spacing: 0.02em !important;
+    line-height: 1 !important;
+    min-height: 48px !important;
+    margin-top: 6px !important;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.35), 0 6px 20px -8px rgba(212,175,55,0.5) !important;
+    cursor: pointer !important;
+    transition: transform .25s cubic-bezier(.2,.7,.2,1), box-shadow .25s ease !important;
+  }
+  .eca-kajabi-form .kajabi-form__btn:not(.kajabi-form__btn--disabled):hover,
+  .eca-kajabi-form button[type="submit"]:hover {
+    background: linear-gradient(180deg, var(--gold-soft), var(--gold)) !important;
+    background-color: var(--gold-soft) !important;
+    transform: scale(1.02) !important;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.45), 0 10px 30px -8px rgba(212,175,55,0.65) !important;
+  }
+
   /* Cover image frame */
   .cover-frame {
     position: relative;
@@ -347,7 +444,9 @@
                 <span class="eyebrow-rule" style="width: 60px;"></span>
               </div>
 
-              <script src="https://www.shaunholdenlifecoaching.co.uk/forms/2149595404/embed.js"></script>
+              <div class="eca-kajabi-form">
+                <script src="https://www.shaunholdenlifecoaching.co.uk/forms/2149595404/embed.js"></script>
+              </div>
 
             </div>
 
