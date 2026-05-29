@@ -1,0 +1,680 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>The Niche Clarity Workbook &middot; Elite Coaching Academy</title>
+<meta name="description" content="The exact framework we use inside ECA to help coaches find a niche they'll actually stick with. Four-part Clarity Compass. Free download." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400;1,9..144,500;1,9..144,600&family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          'navy-deep':     '#030814',
+          'navy-base':     '#061a2e',
+          'navy-elevated': '#0a2440',
+          'blue-bright':   '#2c8eff',
+          'blue-soft':     '#5fa8ff',
+          gold:            '#D4AF37',
+          'gold-soft':     '#E8CB6E',
+          cream:           '#F5F1E8'
+        },
+        fontFamily: {
+          sans:    ['"Inter Tight"','system-ui','sans-serif'],
+          display: ['"Fraunces"','Georgia','serif'],
+          mono:    ['"JetBrains Mono"','ui-monospace','monospace']
+        }
+      }
+    }
+  }
+</script>
+
+<style>
+  :root {
+    --navy-deep:     #030814;
+    --navy-base:     #061a2e;
+    --navy-elevated: #0a2440;
+    --blue-bright:   #2c8eff;
+    --blue-soft:     #5fa8ff;
+    --gold:          #D4AF37;
+    --gold-soft:     #E8CB6E;
+    --cream:         #F5F1E8;
+    --text-primary:  #F5F1E8;
+    --text-muted:    rgba(245,241,232,0.65);
+    --text-subtle:   rgba(245,241,232,0.40);
+    --border-subtle: rgba(245,241,232,0.08);
+    --border-gold:   rgba(212,175,55,0.30);
+    --border-blue:   rgba(44,142,255,0.35);
+  }
+
+  * { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+  html { scroll-behavior: smooth; background: var(--navy-deep); }
+  html, body { overflow-x: hidden; }
+  body {
+    background: var(--navy-deep);
+    color: var(--text-primary);
+    font-family: 'Inter Tight', system-ui, sans-serif;
+    font-weight: 400;
+    line-height: 1.55;
+    position: relative;
+  }
+
+  /* Background texture + glow */
+  body::before {
+    content: '';
+    position: fixed; inset: 0; pointer-events: none; z-index: 1;
+    opacity: 0.045; mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.9 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  }
+  body::after {
+    content: '';
+    position: fixed; inset: 0; pointer-events: none; z-index: 0;
+    background:
+      radial-gradient(900px 600px at 80% -10%, rgba(44,142,255,0.10), transparent 60%),
+      radial-gradient(700px 500px at 5% 30%, rgba(212,175,55,0.06), transparent 60%);
+  }
+  main, header, footer { position: relative; z-index: 2; }
+
+  /* Typography */
+  .font-display { font-family: 'Fraunces', Georgia, serif; }
+  .font-mono    { font-family: 'JetBrains Mono', ui-monospace, monospace; font-feature-settings: 'tnum' 1, 'zero' 1; }
+
+  .eyebrow {
+    color: var(--gold);
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    font-size: 11px;
+    font-weight: 500;
+  }
+
+  .h-hero {
+    font-family: 'Inter Tight', system-ui, sans-serif;
+    font-weight: 600;
+    font-size: clamp(34px, 5vw, 60px);
+    line-height: 1.02;
+    letter-spacing: -0.035em;
+    color: var(--cream);
+  }
+  .h-hero .accent {
+    font-family: 'Fraunces', Georgia, serif;
+    font-style: italic;
+    font-weight: 400;
+    color: var(--gold);
+  }
+  .h-section {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 400;
+    font-size: clamp(28px, 3.6vw, 42px);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    color: var(--text-primary);
+  }
+  .h-section em { font-style: italic; color: var(--cream); }
+  .hero-sub {
+    font-size: clamp(15px, 1.15vw, 17px);
+    color: var(--text-muted);
+    line-height: 1.55;
+    font-weight: 400;
+    max-width: 50ch;
+  }
+  .h-sub {
+    font-size: clamp(15px, 1.2vw, 17px);
+    color: var(--text-muted);
+    line-height: 1.6;
+    max-width: 56ch;
+  }
+
+  /* Card primitive */
+  .card {
+    position: relative;
+    background:
+      linear-gradient(180deg, rgba(255,255,255,0.025) 0%, rgba(255,255,255,0) 60%),
+      var(--navy-elevated);
+    border: 1px solid var(--border-subtle);
+    border-radius: 14px;
+    overflow: hidden;
+  }
+  .card::before {
+    content: '';
+    position: absolute; top: 0; left: 1px; right: 1px; height: 1px;
+    background: linear-gradient(90deg, transparent 0%, rgba(245,241,232,0.18) 50%, transparent 100%);
+    pointer-events: none;
+  }
+  .card-hover { transition: transform .35s cubic-bezier(.2,.7,.2,1), border-color .35s ease, box-shadow .35s ease; }
+  .card-hover:hover {
+    transform: translateY(-3px);
+    border-color: var(--border-gold);
+    box-shadow:
+      0 18px 50px -20px rgba(0,0,0,0.7),
+      0 0 0 1px rgba(212,175,55,0.18);
+  }
+
+  /* Buttons */
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center;
+    padding: 14px 24px;
+    border-radius: 999px;
+    font-family: 'Inter Tight', system-ui, sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 0.02em;
+    min-height: 48px;
+    transition: transform .25s cubic-bezier(.2,.7,.2,1), background-color .25s ease, box-shadow .25s ease;
+    will-change: transform;
+    cursor: pointer;
+  }
+  .btn:hover { transform: scale(1.02); }
+  .btn-gold {
+    background: linear-gradient(180deg, var(--gold-soft), var(--gold));
+    color: #1a1408;
+    border: 1px solid var(--gold);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.35), 0 6px 20px -8px rgba(212,175,55,0.5);
+  }
+  .btn-gold:hover { box-shadow: inset 0 1px 0 rgba(255,255,255,0.45), 0 10px 30px -8px rgba(212,175,55,0.65); }
+  .btn-outline {
+    background: transparent; color: var(--cream);
+    border: 1px solid rgba(245,241,232,0.25);
+  }
+  .btn-outline:hover { border-color: rgba(245,241,232,0.55); background: rgba(245,241,232,0.04); }
+  .btn-full { width: 100%; }
+
+  /* Hairline */
+  .hairline {
+    width: 100%; height: 1px;
+    background: linear-gradient(90deg, transparent, var(--border-gold) 25%, var(--border-gold) 75%, transparent);
+  }
+  .eyebrow-rule {
+    height: 1px; width: 80px;
+    background: linear-gradient(90deg, transparent, var(--gold) 30%, var(--gold) 70%, transparent);
+  }
+
+  /* Scroll progress */
+  .scroll-progress {
+    position: fixed; top: 0; left: 0;
+    height: 2px; width: 0%;
+    background: linear-gradient(90deg, var(--gold), var(--gold-soft));
+    z-index: 100;
+    box-shadow: 0 0 12px rgba(212,175,55,0.6);
+  }
+
+  /* Nav */
+  .nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 60;
+    background: transparent;
+    transition: background-color .35s ease, backdrop-filter .35s ease, border-color .35s ease;
+    border-bottom: 1px solid transparent;
+  }
+  .nav.scrolled {
+    background: rgba(3,8,20,0.78);
+    backdrop-filter: blur(14px) saturate(140%);
+    -webkit-backdrop-filter: blur(14px) saturate(140%);
+    border-bottom: 1px solid var(--border-subtle);
+  }
+
+  /* Form */
+  .input {
+    width: 100%;
+    background: rgba(245,241,232,0.04);
+    border: 1px solid var(--border-subtle);
+    border-radius: 10px;
+    padding: 14px 16px;
+    color: var(--cream);
+    font-family: 'Inter Tight', system-ui, sans-serif;
+    font-size: 15px;
+    transition: border-color .2s ease, background-color .2s ease, box-shadow .2s ease;
+    min-height: 48px;
+  }
+  .input::placeholder { color: var(--text-subtle); }
+  .input:focus {
+    outline: none;
+    border-color: var(--gold);
+    background: rgba(245,241,232,0.06);
+    box-shadow: 0 0 0 3px rgba(212,175,55,0.12);
+  }
+  .input-label {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+    display: block;
+  }
+
+  /* Cover image frame */
+  .cover-frame {
+    position: relative;
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid rgba(212,175,55,0.35);
+    box-shadow:
+      0 40px 100px -40px rgba(0,0,0,0.8),
+      0 0 0 1px rgba(212,175,55,0.10),
+      0 0 80px -20px rgba(44,142,255,0.20);
+    background: #030814;
+  }
+  .cover-frame img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  /* Reveal */
+  .reveal {
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity .8s cubic-bezier(.2,.7,.2,1), transform .8s cubic-bezier(.2,.7,.2,1);
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* Hero stagger */
+  .hero-stagger > * { opacity: 0; transform: translateY(12px); }
+  .hero-stagger.go > * { animation: heroIn .8s cubic-bezier(.2,.7,.2,1) forwards; }
+  .hero-stagger.go > *:nth-child(1) { animation-delay: 60ms; }
+  .hero-stagger.go > *:nth-child(2) { animation-delay: 180ms; }
+  .hero-stagger.go > *:nth-child(3) { animation-delay: 300ms; }
+  .hero-stagger.go > *:nth-child(4) { animation-delay: 420ms; }
+  .hero-stagger.go > *:nth-child(5) { animation-delay: 540ms; }
+  @keyframes heroIn { to { opacity: 1; transform: translateY(0); } }
+
+  /* Anchor offset */
+  section[id] { scroll-margin-top: 80px; }
+
+  /* Tabular numerals */
+  .tabular { font-variant-numeric: tabular-nums; }
+
+  /* Success state */
+  .success-state { display: none; }
+  .success-state.show { display: block; }
+  form.submitted .form-fields { display: none; }
+  form.submitted ~ .success-state { display: block; }
+</style>
+</head>
+
+<body>
+
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+  <!-- ======================= NAV ======================= -->
+  <header id="nav" class="nav">
+    <div class="max-w-7xl mx-auto px-5 md:px-8 h-14 md:h-16 flex items-center justify-between">
+      <a href="https://apply.shaunholdenlifecoaching.co.uk" class="flex items-center gap-2.5 group">
+        <span class="inline-block w-2 h-2 rounded-full bg-gold" style="box-shadow: 0 0 10px rgba(212,175,55,0.7);"></span>
+        <span class="font-display italic font-medium text-cream text-[18px] tracking-tight">ECA</span>
+      </a>
+      <a href="https://apply.shaunholdenlifecoaching.co.uk" class="font-mono text-[11px] tracking-[0.22em] uppercase text-cream/65 hover:text-cream transition-colors">
+        &larr; Back to ECA
+      </a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ======================= HERO + FORM ======================= -->
+    <section class="pt-28 md:pt-36 pb-16 md:pb-24">
+      <div class="max-w-7xl mx-auto px-5 md:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+
+          <!-- LEFT: copy + form -->
+          <div class="lg:col-span-7 hero-stagger" id="heroStagger">
+
+            <div class="flex items-center gap-3 mb-5">
+              <span class="eyebrow">Free workbook &middot; ECA</span>
+              <span class="eyebrow-rule"></span>
+            </div>
+
+            <h1 class="h-hero">
+              Find your <span class="accent">niche.</span><br/>
+              Help more people. Make more.
+            </h1>
+
+            <p class="hero-sub mt-6">
+              The exact framework we use inside ECA to help coaches uncover a niche they'll actually stick with. Four ingredients. One clear sentence. Built around the Clarity Compass.
+            </p>
+
+            <!-- Form card -->
+            <div class="card mt-9 p-6 md:p-7 max-w-xl">
+
+              <div class="flex items-center gap-3 mb-5">
+                <div class="font-mono text-[10px] tracking-[0.3em] uppercase" style="color: var(--gold);">Send it to me</div>
+                <span class="eyebrow-rule" style="width: 60px;"></span>
+              </div>
+
+              <!--
+                ============================================================
+                KAJABI FORM EMBED GOES HERE
+                Replace the <form> block below with the embed code copied
+                from your Kajabi form. Keep the surrounding .card wrapper
+                so the styling stays consistent.
+                ============================================================
+              -->
+              <form id="leadForm" class="form-fields space-y-4" action="#" method="post" novalidate>
+                <div>
+                  <label class="input-label" for="firstName">First name</label>
+                  <input class="input" type="text" id="firstName" name="firstName" placeholder="Shaun" required autocomplete="given-name" />
+                </div>
+                <div>
+                  <label class="input-label" for="email">Email address</label>
+                  <input class="input" type="email" id="email" name="email" placeholder="you@example.com" required autocomplete="email" />
+                </div>
+                <button type="submit" class="btn btn-gold btn-full mt-2">
+                  Send me the workbook
+                  <span class="ml-2.5">&rarr;</span>
+                </button>
+                <p class="font-mono text-[10px] tracking-[0.18em] uppercase text-cream/45 text-center mt-3">
+                  Instant download &middot; no spam &middot; unsubscribe anytime
+                </p>
+              </form>
+
+              <!-- Success state shown after form submit (until Kajabi auto-redirects) -->
+              <div class="success-state">
+                <div class="text-center py-4">
+                  <div class="font-mono text-[10px] tracking-[0.3em] uppercase mb-3" style="color: var(--gold);">Sent</div>
+                  <p class="font-display italic text-xl text-cream mb-4">Check your inbox.</p>
+                  <p class="text-cream/70 text-[14px]">The Niche Clarity Workbook is on its way. Takes a minute or two.</p>
+                </div>
+              </div>
+
+            </div>
+
+            <p class="mt-5 font-mono text-[11px] tracking-wider uppercase text-cream/40">
+              Used by 209 ECA coaches across 23 niches
+            </p>
+          </div>
+
+          <!-- RIGHT: cover image -->
+          <div class="lg:col-span-5 reveal">
+            <div class="cover-frame mx-auto" style="max-width: 460px;">
+              <img
+                src="images/niche-workbook-cover.jpg"
+                alt="The Niche Clarity Workbook by Elite Coaching Academy"
+                loading="eager" />
+            </div>
+            <div class="mt-4 text-center font-mono text-[10px] tracking-[0.3em] uppercase" style="color: var(--text-subtle);">
+              19 pages &middot; PDF &middot; print-friendly
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <div class="hairline"></div>
+
+    <!-- ======================= WHAT'S INSIDE ======================= -->
+    <section class="py-16 md:py-24">
+      <div class="max-w-7xl mx-auto px-5 md:px-8">
+
+        <div class="reveal max-w-3xl">
+          <div class="flex items-center gap-3 mb-5">
+            <span class="eyebrow">The framework</span>
+            <span class="eyebrow-rule"></span>
+          </div>
+          <h2 class="h-section">The <em>Clarity Compass</em>.<br/>Four ingredients. One niche.</h2>
+          <p class="h-sub mt-6">
+            Most coaches pick a niche backwards. They chase what sounds good online and abandon it 6 weeks later. The Clarity Compass works the other way. It aligns four ingredients until your niche is so clear, nobody can really compete with you on it.
+          </p>
+        </div>
+
+        <div class="reveal mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
+
+          <div class="card card-hover p-6 flex flex-col">
+            <div class="font-mono text-[11px] tracking-[0.3em] uppercase" style="color: var(--gold);">P / 01</div>
+            <h3 class="font-display text-xl mt-3" style="color: var(--cream);">Passion</h3>
+            <div class="my-4 h-px w-8" style="background: var(--gold);"></div>
+            <p class="text-[14px] leading-[1.65] text-cream/70">What you genuinely care about helping people solve. The thing that keeps you showing up when the algorithm punishes you.</p>
+          </div>
+
+          <div class="card card-hover p-6 flex flex-col">
+            <div class="font-mono text-[11px] tracking-[0.3em] uppercase" style="color: var(--gold);">P / 02</div>
+            <h3 class="font-display text-xl mt-3" style="color: var(--cream);">Practice</h3>
+            <div class="my-4 h-px w-8" style="background: var(--gold);"></div>
+            <p class="text-[14px] leading-[1.65] text-cream/70">What you've already solved for yourself or others. The receipts behind your message. The bit that makes it believable.</p>
+          </div>
+
+          <div class="card card-hover p-6 flex flex-col">
+            <div class="font-mono text-[11px] tracking-[0.3em] uppercase" style="color: var(--gold);">P / 03</div>
+            <h3 class="font-display text-xl mt-3" style="color: var(--cream);">Pain</h3>
+            <div class="my-4 h-px w-8" style="background: var(--gold);"></div>
+            <p class="text-[14px] leading-[1.65] text-cream/70">A problem people want gone NOW, not someday. People don't pay thousands for growth. They pay to escape pain.</p>
+          </div>
+
+          <div class="card card-hover p-6 flex flex-col">
+            <div class="font-mono text-[11px] tracking-[0.3em] uppercase" style="color: var(--gold);">P / 04</div>
+            <h3 class="font-display text-xl mt-3" style="color: var(--cream);">Profit</h3>
+            <div class="my-4 h-px w-8" style="background: var(--gold);"></div>
+            <p class="text-[14px] leading-[1.65] text-cream/70">Something people already pay real money to fix. If nobody's paying to solve this, you don't have a niche, you have a hobby.</p>
+          </div>
+
+        </div>
+
+        <p class="reveal mt-10 text-center font-display italic text-[16px] md:text-[18px] max-w-2xl mx-auto" style="color: var(--cream);">
+          Four answers. <span style="color: var(--gold);">One sentence.</span> The niche statement that does the selling for you.
+        </p>
+      </div>
+    </section>
+
+    <div class="hairline"></div>
+
+    <!-- ======================= WHAT YOU'LL GET ======================= -->
+    <section class="py-16 md:py-24">
+      <div class="max-w-7xl mx-auto px-5 md:px-8">
+
+        <div class="reveal max-w-3xl">
+          <div class="flex items-center gap-3 mb-5">
+            <span class="eyebrow">Inside the workbook</span>
+            <span class="eyebrow-rule"></span>
+          </div>
+          <h2 class="h-section">What you'll actually <em>walk away with</em>.</h2>
+        </div>
+
+        <div class="reveal mt-12 grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4">
+
+          <div class="card p-6">
+            <div class="font-mono text-[11px] tracking-[0.3em] uppercase mb-4" style="color: var(--blue-soft);">Step-by-step</div>
+            <h3 class="font-display text-lg mb-3" style="color: var(--cream);">The Clarity Compass walkthrough</h3>
+            <p class="text-[14px] leading-[1.65] text-cream/70">Each of the four P's broken down. A question to answer, three prompts to think it through, a worked example, then your own answer page.</p>
+          </div>
+
+          <div class="card p-6">
+            <div class="font-mono text-[11px] tracking-[0.3em] uppercase mb-4" style="color: var(--blue-soft);">Formula</div>
+            <h3 class="font-display text-lg mb-3" style="color: var(--cream);">The niche statement template</h3>
+            <p class="text-[14px] leading-[1.65] text-cream/70">"I help [WHO] who [PROBLEM] become [RESULT], so that they can [DEEPER OUTCOME]." The exact sentence structure that makes the right people self-qualify.</p>
+          </div>
+
+          <div class="card p-6">
+            <div class="font-mono text-[11px] tracking-[0.3em] uppercase mb-4" style="color: var(--blue-soft);">Quality check</div>
+            <h3 class="font-display text-lg mb-3" style="color: var(--cream);">The 90-day commitment test</h3>
+            <p class="text-[14px] leading-[1.65] text-cream/70">How to know if your niche actually works, without quitting after two weeks. Five-question filter you can run on any niche statement.</p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <div class="hairline"></div>
+
+    <!-- ======================= SOCIAL PROOF ======================= -->
+    <section class="py-12 md:py-16" style="background: linear-gradient(180deg, rgba(44,142,255,0.04), transparent);">
+      <div class="max-w-7xl mx-auto px-5 md:px-8 reveal">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-0 items-center text-center">
+
+          <div class="md:border-r md:border-r-[var(--border-blue)] md:px-6">
+            <div class="font-mono text-[11px] tracking-[0.22em] uppercase mb-2" style="color: var(--blue-soft);">Coaches helped</div>
+            <div class="font-display text-3xl md:text-4xl tabular" style="color: var(--cream);">
+              <span class="counter" data-target="209">0</span>
+              <span class="text-cream/80 font-sans font-normal text-[15px] md:text-[16px] block mt-1">in 18 months</span>
+            </div>
+          </div>
+
+          <div class="md:px-6">
+            <div class="font-mono text-[11px] tracking-[0.22em] uppercase mb-2" style="color: var(--blue-soft);">Niches</div>
+            <div class="font-display text-3xl md:text-4xl tabular" style="color: var(--cream);">
+              <span class="counter" data-target="23">0</span>
+              <span class="text-cream/80 font-sans font-normal text-[15px] md:text-[16px] block mt-1">different niches</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <div class="hairline"></div>
+
+    <!-- ======================= FINAL CTA ======================= -->
+    <section class="py-16 md:py-24 relative overflow-hidden" style="background:
+      radial-gradient(900px 500px at 50% 0%, rgba(212,175,55,0.10), transparent 70%);">
+      <div class="max-w-3xl mx-auto px-5 md:px-8 text-center">
+
+        <div class="reveal flex items-center justify-center gap-3 mb-6">
+          <span class="eyebrow-rule" style="width: 60px;"></span>
+          <span class="eyebrow">Grab the workbook</span>
+          <span class="eyebrow-rule" style="width: 60px;"></span>
+        </div>
+
+        <h2 class="reveal h-section">Stop guessing your niche. <em>Build it on purpose.</em></h2>
+        <p class="reveal h-sub mt-6 mx-auto" style="margin-left: auto; margin-right: auto;">
+          19 pages. Four P's. One niche statement you'll actually commit to. Drop your email above and it's in your inbox in under a minute.
+        </p>
+
+        <div class="reveal mt-10 flex justify-center">
+          <a href="#heroStagger" class="btn btn-gold !py-5 !px-9 !text-[15px]">
+            Get the workbook
+            <span class="ml-2.5">&uarr;</span>
+          </a>
+        </div>
+
+        <p class="reveal mt-6 font-mono text-[11px] tracking-[0.2em] uppercase" style="color: var(--text-subtle);">
+          @shaunholden_lifecoaching &middot; Elite Coaching Academy
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ======================= FOOTER ======================= -->
+  <footer class="border-t border-white/5" style="background: var(--navy-deep);">
+    <div class="max-w-7xl mx-auto px-5 md:px-8 py-10 grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
+
+      <div class="flex items-center gap-2.5">
+        <span class="inline-block w-2 h-2 rounded-full bg-gold" style="box-shadow: 0 0 10px rgba(212,175,55,0.7);"></span>
+        <span class="font-display italic text-[16px]" style="color: var(--cream);">Elite Coaching Academy</span>
+      </div>
+
+      <p class="font-mono text-[11px] tracking-[0.15em] uppercase text-center" style="color: var(--text-subtle);">
+        &copy; 2026 Shaun Holden Coaching
+      </p>
+
+      <div class="flex items-center gap-5 text-[13px] md:justify-end">
+        <a href="https://instagram.com/shaunholden_lifecoaching" target="_blank" rel="noopener" class="text-cream/70 hover:text-gold transition-colors">Instagram</a>
+        <span class="text-cream/20">/</span>
+        <a href="https://apply.shaunholdenlifecoaching.co.uk" class="text-cream/70 hover:text-gold transition-colors">ECA programme</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Sticky nav on scroll
+    (function () {
+      var nav = document.getElementById('nav');
+      function onScroll() {
+        if (window.scrollY > 30) nav.classList.add('scrolled');
+        else nav.classList.remove('scrolled');
+      }
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    })();
+
+    // Scroll progress bar
+    (function () {
+      var bar = document.getElementById('scrollProgress');
+      function update() {
+        var h = document.documentElement;
+        var max = h.scrollHeight - h.clientHeight;
+        bar.style.width = (max > 0 ? (h.scrollTop / max) * 100 : 0) + '%';
+      }
+      window.addEventListener('scroll', update, { passive: true });
+      window.addEventListener('resize', update);
+      update();
+    })();
+
+    // Hero stagger reveal
+    (function () {
+      var hero = document.getElementById('heroStagger');
+      if (!hero) return;
+      requestAnimationFrame(function () {
+        setTimeout(function () { hero.classList.add('go'); }, 80);
+      });
+    })();
+
+    // Reveal on scroll
+    (function () {
+      var els = document.querySelectorAll('.reveal');
+      if (!('IntersectionObserver' in window)) {
+        els.forEach(function (el) { el.classList.add('visible'); });
+        return;
+      }
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.10, rootMargin: '0px 0px -50px 0px' });
+      els.forEach(function (el) { io.observe(el); });
+    })();
+
+    // Counter animation
+    (function () {
+      function animate(el) {
+        var target = parseFloat(el.dataset.target);
+        var dur = 1500, start = null;
+        function step(ts) {
+          if (start === null) start = ts;
+          var t = Math.min((ts - start) / dur, 1);
+          var eased = 1 - Math.pow(1 - t, 3);
+          el.textContent = Math.round(target * eased).toLocaleString('en-GB');
+          if (t < 1) requestAnimationFrame(step);
+          else el.textContent = Math.round(target).toLocaleString('en-GB');
+        }
+        requestAnimationFrame(step);
+      }
+      var counters = document.querySelectorAll('.counter');
+      if (!('IntersectionObserver' in window)) { counters.forEach(animate); return; }
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) { animate(entry.target); io.unobserve(entry.target); }
+        });
+      }, { threshold: 0.4 });
+      counters.forEach(function (el) { io.observe(el); });
+    })();
+
+    // Placeholder form submit handler (replaced when Kajabi embed lands)
+    (function () {
+      var form = document.getElementById('leadForm');
+      if (!form) return;
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var email = form.querySelector('#email').value.trim();
+        if (!email) return;
+        form.classList.add('submitted');
+        // Until Kajabi is wired, also kick off the download directly so
+        // testing the page locally still feels like a real flow.
+        var a = document.createElement('a');
+        a.href = 'downloads/niche-finder-workbook.pdf';
+        a.download = 'Niche-Clarity-Workbook.pdf';
+        document.body.appendChild(a); a.click(); a.remove();
+      });
+    })();
+  </script>
+</body>
+</html>
