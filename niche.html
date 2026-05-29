@@ -282,7 +282,7 @@
     padding: 0 !important;
     background: transparent !important;
   }
-  /* Inputs — dark transparent fill, gold-at-low-opacity border, cream text */
+  /* Inputs: dark transparent fill, gold-at-low-opacity border, cream text */
   .eca-kajabi-form input[type="text"],
   .eca-kajabi-form input[type="email"] {
     width: 100% !important;
@@ -313,7 +313,7 @@
     background-color: rgba(245,241,232,0.06) !important;
     box-shadow: 0 0 0 3px rgba(212,175,55,0.12) !important;
   }
-  /* Submit button — matches .btn.btn-gold.btn-full on the rest of the site */
+  /* Submit button: matches .btn.btn-gold.btn-full on the rest of the site */
   .eca-kajabi-form .kajabi-form__btn,
   .eca-kajabi-form button[type="submit"] {
     display: inline-flex !important;
@@ -343,24 +343,6 @@
     background-color: var(--gold-soft) !important;
     transform: scale(1.02) !important;
     box-shadow: inset 0 1px 0 rgba(255,255,255,0.45), 0 10px 30px -8px rgba(212,175,55,0.65) !important;
-  }
-
-  /* Cover image frame */
-  .cover-frame {
-    position: relative;
-    border-radius: 14px;
-    overflow: hidden;
-    border: 1px solid rgba(212,175,55,0.35);
-    box-shadow:
-      0 40px 100px -40px rgba(0,0,0,0.8),
-      0 0 0 1px rgba(212,175,55,0.10),
-      0 0 80px -20px rgba(44,142,255,0.20);
-    background: #030814;
-  }
-  .cover-frame img {
-    display: block;
-    width: 100%;
-    height: auto;
   }
 
   /* Reveal */
@@ -457,12 +439,12 @@
 
           <!-- RIGHT: cover image -->
           <div class="lg:col-span-5 reveal">
-            <div class="cover-frame mx-auto" style="max-width: 460px;">
-              <img
-                src="images/niche-workbook-cover.jpg"
-                alt="The Niche Clarity Workbook by Elite Coaching Academy"
-                loading="eager" />
-            </div>
+            <img
+              src="images/niche-workbook-cover.jpg"
+              alt="The Niche Clarity Workbook"
+              loading="eager"
+              class="block mx-auto"
+              style="max-width: 100%; width: 100%; height: auto;" />
             <div class="mt-4 text-center font-mono text-[10px] tracking-[0.3em] uppercase" style="color: var(--text-subtle);">
               19 pages &middot; PDF &middot; print-friendly
             </div>
